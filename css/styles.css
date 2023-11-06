@@ -11,35 +11,42 @@ html, body {
 
 /* Sidebar Navigation Elements */
 .sidebar {
-    height: 100vh; /* 100% Full-height */
-    width: 4.5rem; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    width: 4rem;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
     left: 0;
-    background-color: grey; /* Black*/
-    overflow: hidden; /* Disable horizontal scroll */
+    overflow: hidden;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sidebar a {
-    padding: 1rem 1rem; /* Adjusted padding */
+    padding: 1rem;
     text-decoration: none;
     color: black;
-    display: flex; /* Use flex to center items */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .sidebar img {
-    max-width: 100%; /* Ensure the image is not larger than the container */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
+}
+
+.bottom-link {
+    margin-top: auto;
 }
 
 /* Main Content Elements */
 .main {
     margin: 0;
     background-color: black;
-    padding-left: 4.5rem;
+    padding-left: 4rem;
 }
 
 .section {
