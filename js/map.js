@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             controls: ol.control.defaults({
                 attribution: false,
                 rotate: false,
-                zoom: false
+                zoom: true
             }),
             interactions: [],
             layers: [
