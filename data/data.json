@@ -1,0 +1,289 @@
+{
+  "UnionSquareNoiseData": {
+    "location": {
+      "longitude": -73.99030432050893,
+      "latitude": 40.7359315673158,
+      "name": "Union Square"
+    },
+    "noiseEvents": [
+      {
+        "eventId": 1,
+        "type": "Construction",
+        "description": "Loud noise from construction equipment",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 120,
+        "locations": [
+          {
+            "longitude": -73.99187607104022,
+            "latitude": 40.736776722834435,
+            "name": "East 16th Street"
+          }
+        ]
+      },
+      {
+        "eventId": 2,
+        "type": "Traffic",
+        "description": "Loud noise from heavy traffic",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 75,
+        "locations": [
+          {
+            "longitude": -73.99075206121171,
+            "latitude": 40.73477765145198,
+            "name": "Citi Bank Intersection on 14th"
+          },
+          {
+            "longitude": -73.98992593213546,
+            "latitude": 40.735331129069436,
+            "name": "Starbucks Intersection at 15th St"
+          },
+          {
+            "longitude": -73.98993869727954,
+            "latitude": 40.73446344857237,
+            "name": "Best Buy Intersection on 14th"
+          },
+          {
+            "longitude": -73.98903278984854,
+            "latitude": 40.73650575387067,
+            "name": "Petco Intersection near 17th St"
+          },
+          {
+            "longitude": -73.99031188495549,
+            "latitude": 40.73711481789241,
+            "name": "McDonald's Intersection on 17th St"
+          }
+        ]
+      },
+      {
+        "eventId": 3,
+        "type": "Subway",
+        "description": "Loud noise from subway entry/exits",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 65,
+        "locations": [
+          {
+            "longitude": -73.99105918789407,
+            "latitude": 40.735290904294196,
+            "name": "Gazebo Entrance Near Park Chess Tables"
+          },
+          {
+            "longitude": -73.99028182028971,
+            "latitude": 40.7353118563835,
+            "name": "Gazebo Entrance Near Park and 15th St"
+          },
+          {
+            "longitude": -73.98978860071661,
+            "latitude": 40.73514519851132,
+            "name": "Starbucks Entrance at 15th St"
+          },
+          {
+            "longitude": -73.9897569674903,
+            "latitude": 40.73454797749299,
+            "name": "Target Entrance on 14th St"
+          },
+          {
+            "longitude": -73.98959892962345,
+            "latitude": 40.734207912816494,
+            "name": "Target Across Entrance on 14th St"
+          },
+          {
+            "longitude": -73.99025136349199,
+            "latitude": 40.73451697225536,
+            "name": "BestBuy Across Entrances on 14th"
+          },
+          {
+            "longitude": -73.99100220009848,
+            "latitude": 40.73477019958717,
+            "name": "Capital One Bank Entrance"
+          },
+          {
+            "longitude": -73.99128804247653,
+            "latitude": 40.73488056563265,
+            "name": "Sephora Near Entrance"
+          },
+          {
+            "longitude": -73.990465958627,
+            "latitude": 40.73653467062441,
+            "name": "Van Leeuwen Near Entrance"
+          },
+          {
+            "longitude": -73.99058480529317,
+            "latitude": 40.73638787368775,
+            "name": "Van Leeuwen Facing Away Entrance"
+          }
+        ]
+      },
+      {
+        "eventId": 4,
+        "type": "Street Vendors",
+        "description": "Noise from the street vendors",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 50,
+        "locations": [
+          {
+            "longitude": -73.99002345946651,
+            "latitude": 40.736704508671714,
+            "name": "Vendor 1"
+          },
+          {
+            "longitude": -73.99026322713485,
+            "latitude": 40.73683536916196,
+            "name": "Vendor 2"
+          },
+          {
+            "longitude": -73.99048579757734,
+            "latitude": 40.7366743701391,
+            "name": "Vendor 3"
+          },
+          {
+            "longitude": -73.99075013047934,
+            "latitude": 40.736352047877574,
+            "name": "Vendor 4"
+          },
+          {
+            "longitude": -73.9909288318545,
+            "latitude": 40.73610550454762,
+            "name": "Vendor 5"
+          },
+          {
+            "longitude": -73.99114961561104,
+            "latitude": 40.73571595571306,
+            "name": "Vendor 6"
+          },
+          {
+            "longitude": -73.99118343250925,
+            "latitude": 40.73548707735724,
+            "name": "Vendor 7"
+          }
+        ]
+      },
+      {
+        "eventId": 5,
+        "type": "Nightlife",
+        "description": "Noise from Entertainment areas",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 42,
+        "locations": [
+          {
+            "longitude": -73.99003430937825,
+            "latitude": 40.736523649764365,
+            "name": "Freehold Bar"
+          },
+          {
+            "longitude": -73.98979460096395,
+            "latitude": 40.73642525846845,
+            "name": "Freehold Bar 2"
+          },
+          {
+            "longitude": -73.991346254215,
+            "latitude": 40.73667939153558,
+            "name": "16th St Restaurant"
+          },
+          {
+            "longitude": -73.99181403657344,
+            "latitude": 40.73624163555359,
+            "name": "Park Bar"
+          },
+          {
+            "longitude": -73.9886420105528,
+            "latitude": 40.73490808686872,
+            "name": "15th St Bar"
+          }
+        ]
+      },
+      {
+        "eventId": 6,
+        "type": "People",
+        "description": "People generated noises due to crowding (includes parks, children and pets)",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 40,
+        "locations": [
+          {
+            "longitude": -73.98976791506834,
+            "latitude": 40.73626430508251,
+            "name": "Children's Park"
+          },
+          {
+            "longitude": -73.99020294590011,
+            "latitude": 40.736441515938104,
+            "name": "Children's Park 2"
+          },
+          {
+            "longitude": -73.99097971873564,
+            "latitude": 40.73558436749628,
+            "name": "Dog Park"
+          },
+          {
+            "longitude": -73.99062171215175,
+            "latitude": 40.73517184434336,
+            "name": "Statue Stairs"
+          },
+          {
+            "longitude": -73.99085466634149,
+            "latitude": 40.7351730824015,
+            "name": "Statue Stairs 2"
+          },
+          {
+            "longitude": -73.9912022289283,
+            "latitude": 40.735215092041216,
+            "name": "Chess Player Area"
+          },
+          {
+            "longitude": -73.99218253648166,
+            "latitude": 40.73702295919684,
+            "name": "New School Student Area"
+          }
+        ]
+      },
+      {
+        "eventId": 7,
+        "type": "City Services",
+        "description": "Loud noise from city services such as Ambulance, Cops, and Garbage Trucks",
+        "time": [
+          {
+            "startTime": "0:00:00",
+            "endTime": "24:00:00"
+          }
+        ],
+        "decibelLevel": 150,
+        "locations": [
+          {
+            "longitude": "",
+            "latitude": "",
+            "name": ""
+          }
+        ]
+      }
+    ]
+  }
+}
