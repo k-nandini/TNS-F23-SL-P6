@@ -61,6 +61,10 @@ html, body {
     height: 100%; 
 }
 
+.filter-controls  {
+    background-color: aliceblue;
+}
+
 /* Footer Elements */
 .footer {
     display: block; 
