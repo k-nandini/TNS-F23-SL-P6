@@ -192,11 +192,3 @@ html, body {
     background-color: #f8f9fa; /* Light grey to match the sidebar for design consistency */
 }
 
-/* Footer styles */
-.footer {
-    display: block; /* Default block display for a standard footer layout */
-    background-color: #f8f9fa; /* Light grey to match the sidebar and filter controls for a cohesive look */
-    width: 100%; /* Full width to span the bottom of the screen */
-    height: 5rem; /* Fixed height for a substantial footer presence */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Subtle shadow for visual separation from the content area */
-}
