@@ -1,5 +1,8 @@
+//
+// OpenLayers Map Script
+//
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('data/data.json')
+    fetch('assets/data/data.json')
     .then(response => response.json())
     .then(data => {
         var unionSquareData = data.UnionSquareNoiseData.location;

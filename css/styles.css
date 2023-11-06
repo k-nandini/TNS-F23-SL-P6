@@ -1,12 +1,66 @@
+/* */
+/* Custom CSS */
+/* */
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
 }
 
-.map {
-    display: block; 
-    background-color: beige; 
+/* Sidebar Navigation Elements */
+.sidebar {
+    height: 100vh; /* 100% Full-height */
+    width: 4.5rem; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: grey; /* Black*/
+    overflow: hidden; /* Disable horizontal scroll */
+}
+
+.sidebar a {
+    padding: 1rem 1rem; /* Adjusted padding */
+    text-decoration: none;
+    color: black;
+    display: flex; /* Use flex to center items */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.sidebar img {
+    max-width: 100%; /* Ensure the image is not larger than the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Main Content Elements */
+.main {
+    margin: 0;
+    background-color: black;
+    padding-left: 4.5rem;
+}
+
+.section {
+    display: block;
+    background-color: white;
     width: 100vw;
     height: 100vh;
 }
+
+/* Map Elements */
+.map {  
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer Elements */
+.footer  {
+    display: block;
+    background-color: white;
+    width: 100vw;
+    height: 10rem;
+}
+
+
