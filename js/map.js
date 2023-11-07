@@ -1,124 +1,105 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('assets/data/data.json')
-    .then(response => response.json())
-    .then(data => {
-        var unionSquareData = data.UnionSquareNoiseData.location;
-        var noiseEvents = data.UnionSquareNoiseData.noiseEvents;
+const mapboxAccessToken = document.querySelector('meta[name="mapbox-token"]').getAttribute('content');
+mapboxgl.accessToken = mapboxAccessToken;
 
-        var map = new ol.Map({
-            target: 'map',
-            controls: ol.control.defaults({
-                attribution: false,
-                rotate: false,
-                zoom: true
-            }),
-            interactions: [],
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.OSM()
-                })
-            ],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([unionSquareData.longitude, unionSquareData.latitude]),
-                zoom: 19,
-                rotation: 331 * (Math.PI / 180)
-            })
+async function loadNoiseData() {
+  try {
+    const response = await fetch('assets/data/data.json');
+    const jsonData = await response.json();
+    initializeMap(jsonData.UnionSquareNoiseData);
+  } catch (error) {
+    console.error('Error loading the JSON data: ', error);
+  }
+}
+
+function initializeMap(noiseData) {
+  mapboxgl.accessToken = mapboxAccessToken;
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/kuman293/clonlclap009b01qofndpfsy0',
+    center: [noiseData.location.longitude, noiseData.location.latitude],
+    zoom: 18,
+    bearing: -331,
+    interactive: false,
+    attributionControl: false
+  });
+
+  map.on('load', () => {
+    addNoiseEventLayers(map, noiseData.noiseEvents);
+  });
+}
+
+function addNoiseEventLayers(map, noiseEvents) {
+  noiseEvents.forEach((event, eventIndex) => {
+    event.locations.forEach((location, locationIndex) => {
+      const sourceId = `source-${eventIndex}-${locationIndex}`;
+      const eventTypeColor = getEventTypeColor(event.type);
+
+      const featureData = createFeatureData(location, event.decibelLevel);
+
+      if (!map.getSource(sourceId)) {
+        map.addSource(sourceId, {
+          'type': 'geojson',
+          'data': featureData
         });
+      }
 
-        var eventTypeColorMap = {
-            "Construction": [255, 102, 102],
-            "Traffic": [178, 102, 178],
-            "Subway": [179, 183, 187],
-            "Street Vendors": [255, 195, 77],
-            "Nightlife": [255, 155, 210],
-            "People": [255, 252, 235],
-            "City Services": [77, 77, 77]
-        };
+      addEventLayers(map, sourceId, eventTypeColor, eventIndex, locationIndex);
+    });
+  });
+}
 
-        var vectorSource = new ol.source.Vector();
-        var originalFeatures = {};
-        var filterState = {
-            "Construction": true,
-            "Traffic": true,
-            "Subway": true,
-            "Street Vendors": true,
-            "Nightlife": true,
-            "People": true,
-            "City Services": true
-        };
+function createFeatureData(location, decibelLevel) {
+  return {
+    'type': 'Feature',
+    'geometry': {
+      'type': 'Point',
+      'coordinates': [location.longitude, location.latitude]
+    },
+    'properties': {
+      'decibelLevel': decibelLevel
+    }
+  };
+}
 
-        noiseEvents.forEach(function(noiseEvent) {
-            if (!originalFeatures[noiseEvent.type]) {
-                originalFeatures[noiseEvent.type] = [];
-            }
+function addEventLayers(map, sourceId, eventTypeColor, eventIndex, locationIndex) {
+  const circles = [
+    { radiusMultiplier: 0.26, opacity: 0.5 },
+    { radiusMultiplier: 0.52, opacity: 0.3 },
+    { radiusMultiplier: 1.04, opacity: 0.1 }
+  ];
 
-            noiseEvent.locations.forEach(function(noiseLocation) {
-                if (!noiseLocation.longitude || !noiseLocation.latitude) {
-                    return;
-                }
+  circles.forEach((circle, index) => {
+    const layerId = `layer-${eventIndex}-${locationIndex}-${index}`;
+    map.addLayer({
+      'id': layerId,
+      'type': 'circle',
+      'source': sourceId,
+      'paint': {
+        'circle-radius': [
+          'interpolate', ['linear'], ['zoom'],
+          10, ['*', ['get', 'decibelLevel'], circle.radiusMultiplier],
+          18, ['*', ['get', 'decibelLevel'], circle.radiusMultiplier * 2]
+        ],
+        'circle-color': eventTypeColor,
+        'circle-opacity': circle.opacity
+      }
+    });
+  });
+}
 
-                var decibelLevel = noiseEvent.decibelLevel;
-                var baseColor = eventTypeColorMap[noiseEvent.type] || [0, 0, 0];
+function getEventTypeColor(eventType) {
+  const eventColors = {
+    'Construction': '#FF6666',
+    'Traffic': '#B266B2',
+    'Subway': '#B3B7BB',
+    'Street Vendors': '#FFC34D',
+    'Nightlife': '#FF9BD2',
+    'People': '#FFFCEB',
+    'City Services': '#4D4D4D'
+  };
+  // Changed default color to a more visible one
+  return eventColors[eventType] || '#AAAAAA';
+}
 
-                for (var i = 1; i <= 3; i++) {
-                    var radiusMultiplier, transparency;
-                    switch (i) {
-                        case 1:
-                            radiusMultiplier = 0.26;
-                            transparency = 0.4;
-                            break;
-                        case 2:
-                            radiusMultiplier = 0.40;
-                            transparency = 0.3;
-                            break;
-                        case 3:
-                            radiusMultiplier = 0.5;
-                            transparency = 0.1;
-                            break;
-                    }
-
-                    var radius = radiusMultiplier * decibelLevel;
-                    var color = 'rgba(' + baseColor.join(',') + ',' + transparency + ')';
-
-                    var noiseCircle = new ol.Feature({
-                        geometry: new ol.geom.Circle(ol.proj.fromLonLat([parseFloat(noiseLocation.longitude), parseFloat(noiseLocation.latitude)]), radius)
-                    });
-
-                    noiseCircle.setStyle(new ol.style.Style({
-                        fill: new ol.style.Fill({
-                            color: color
-                        })
-                    }));
-
-                    noiseCircle.set('type', noiseEvent.type);
-                    originalFeatures[noiseEvent.type].push(noiseCircle);
-                }
-            });
-        });
-
-        function updateEventVisibility() {
-            vectorSource.clear();
-            Object.keys(filterState).forEach(function(eventType) {
-                if (filterState[eventType]) {
-                    vectorSource.addFeatures(originalFeatures[eventType]);
-                }
-            });
-        }
-
-        document.querySelectorAll('#filter-controls input[type="checkbox"]').forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                filterState[this.value] = this.checked;
-                updateEventVisibility();
-            });
-        });
-
-        var vectorLayer = new ol.layer.Vector({
-            source: vectorSource
-        });
-
-        map.addLayer(vectorLayer);
-
-        updateEventVisibility();
-    })
-    .catch(error => console.error('Error loading JSON data:', error));
-});
+// Call the function to load and display the noise data
+loadNoiseData();

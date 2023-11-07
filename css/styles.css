@@ -183,12 +183,20 @@ html, body {
 }
 
 /* Map container styles */
-.map {  
+#map { 
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 100%; /* Full width to use all available space */
     height: 100%; /* Full height to match the content area */
+    overflow: hidden;
 }
 
 .filter-controls  {
     background-color: #f8f9fa; /* Light grey to match the sidebar for design consistency */
+    z-index: 1;
 }
 
+.mapboxgl-ctrl-logo {
+    display: none !important;
+}

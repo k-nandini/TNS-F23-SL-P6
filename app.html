@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="mapbox-token" content="pk.eyJ1Ijoia3VtYW4yOTMiLCJhIjoiY2xvbnBzdzlhMmt3NjJucWVvdWF4cXFqYSJ9.ZmrjQlIWjcGD0wqUwcnxsw">
     <title>Quiet Union - Map</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/logo.ico">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Open Layers CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openlayers@4.6.5/dist/ol.css" type="text/css">
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
 </head>
 <body>
     <!-- Sidebar Menu -->
@@ -33,19 +34,11 @@
         <section class="section" id="app">
             <div id="map" class="map"></div>
             <!-- Filter Controls -->
-            <div class="filter-controls" id="filter-controls">
-                <label><input type="checkbox" value="Construction" checked> Construction</label>
-                <label><input type="checkbox" value="Traffic" checked> Traffic</label>
-                <label><input type="checkbox" value="Subway" checked> Subway</label>
-                <label><input type="checkbox" value="Street Vendors" checked> Street Vendors</label>
-                <label><input type="checkbox" value="Nightlife" checked> Nightlife</label>
-                <label><input type="checkbox" value="People" checked> People</label>
-                <label><input type="checkbox" value="City Services" checked> City Services</label>
-            </div>
+            <!-- REPLACE WITH FILTERS -->
         </section>
     </main>
-    <!-- Open Layers JS -->
-    <script src="https://cdn.jsdelivr.net/npm/openlayers@4.6.5/dist/ol.js"></script>
+    <!-- Mapbox JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
     <script src="js/map.js"></script>
