@@ -81,7 +81,7 @@ html, body {
 
 .hero-title {
 	max-width: 16em; 
-	margin: 0 0 1em 0; 
+	margin: 0 0 0.5em 0; 
 	font-size: 7rem; 
 	font-weight: bold; 
 	line-height: 1.2; 
@@ -90,17 +90,16 @@ html, body {
 }
 
 .hero-button {
-	padding: 1em 2.5em; 
+	padding: 1em 2.5em;
+
 	color: #fff; 
 	text-decoration: none; 
     background-color: transparent; 
 	border: 0.2em solid white; 
     border-color: #fff; 
 	border-radius: 0.25rem; 
-	max-width: 250px; 
 	display: inline-block; 
-	text-align: center; 
-	margin-left: 1em; 
+	text-align: center;  
 	cursor: pointer; 
     font-weight: bold;
     font-size: larger;
@@ -150,6 +149,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 1em;
 }
 
 .inner-about-section h1 {
@@ -204,5 +204,6 @@ html, body {
   
 .slider-container input[type="range"] {
     width: 300px;
+    cursor: grab;
 }
   
