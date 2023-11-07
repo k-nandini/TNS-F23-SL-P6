@@ -12,8 +12,8 @@
         "description": "Loud noise from construction equipment",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "07:00:00",
+            "endTime": "18:00:00"
           }
         ],
         "decibelLevel": 120,
@@ -31,8 +31,8 @@
         "description": "Loud noise from heavy traffic",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "08:00:00",
+            "endTime": "19:00:00"
           }
         ],
         "decibelLevel": 75,
@@ -70,8 +70,8 @@
         "description": "Loud noise from subway entry/exits",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "00:00:00",
+            "endTime": "23:59:00"
           }
         ],
         "decibelLevel": 65,
@@ -134,8 +134,8 @@
         "description": "Noise from the street vendors",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
           }
         ],
         "decibelLevel": 50,
@@ -183,8 +183,8 @@
         "description": "Noise from Entertainment areas",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "12:00:00",
+            "endTime": "23:59:00"
           }
         ],
         "decibelLevel": 42,
@@ -222,8 +222,8 @@
         "description": "People generated noises due to crowding (includes parks, children and pets)",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "06:00:00",
+            "endTime": "23:59:00"
           }
         ],
         "decibelLevel": 40,
@@ -271,8 +271,8 @@
         "description": "Loud noise from city services such as Ambulance, Cops, and Garbage Trucks",
         "time": [
           {
-            "startTime": "0:00:00",
-            "endTime": "24:00:00"
+            "startTime": "00:00:00",
+            "endTime": "23:59:00"
           }
         ],
         "decibelLevel": 150,

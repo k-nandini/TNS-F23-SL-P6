@@ -190,11 +190,19 @@ html, body {
     overflow: hidden;
 }
 
-.filter-controls  {
-    background-color: #f8f9fa; 
-    z-index: 1;
-}
-
 .mapboxgl-ctrl-logo {
     display: none !important;
 }
+
+.slider-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+  
+.slider-container input[type="range"] {
+    width: 300px;
+}
+  

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="mapbox-token" content="pk.eyJ1Ijoia3VtYW4yOTMiLCJhIjoiY2xvbnBzdzlhMmt3NjJucWVvdWF4cXFqYSJ9.ZmrjQlIWjcGD0wqUwcnxsw">
+    <meta name="mapbox-token" content="pk.eyJ1Ijoia3VtYW4yOTMiLCJhIjoiY2xvbnFuZzRjMTJ4MjJpbndoOTNhbjExdCJ9.GyyVYOAddpKpyi9iIBOakQ">
     <title>Quiet Union - Map</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/logo.ico">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Sidebar Menu -->
-    <header class="sidebar" id="sidebar">
+    <header class="sidebar" id="sidebar">   
         <div>
             <a href="index.html">
                 <img src="assets/img/icons/home.svg" alt="Home">
@@ -34,7 +34,10 @@
         <section class="section" id="app">
             <div id="map" class="map"></div>
             <!-- Filter Controls -->
-            <!-- REPLACE WITH FILTERS -->
+            <div class="slider-container">
+                <input type="range" id="timeSlider" min="0" max="23" step="1" value="12">
+                <label for="timeSlider">Time: <span id="timeSliderValue">12:00</span></label>
+            </div>
         </section>
     </main>
     <!-- Mapbox JS -->
