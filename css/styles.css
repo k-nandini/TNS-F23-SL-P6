@@ -2,153 +2,151 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    overflow-y: auto; /* Enable vertical scroll */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, legible font */
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 /* Styles for the sidebar navigation */
 .sidebar {
-    width: 4rem; /* Compact width to minimize screen real estate usage */
-    height: 100vh; /* Full viewport height to extend the entire height of the view */
-    position: fixed; /* Fixed position to stay in place on scroll */
-    z-index: 1; /* Above other elements to ensure visibility */
-    top: 0; /* Align to the top of the viewport */
-    left: 0; /* Align to the left of the viewport */
-    overflow-x: hidden; /* No horizontal scroll to maintain a clean layout */
-    background-color: #f8f9fa; /* Neutral light grey background for a subtle, modern look */
+    width: 4rem; 
+    height: 100vh; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0; 
+    overflow-x: hidden; 
+    background-color: #f8f9fa; 
     display: flex;
-    flex-direction: column; /* Stack items vertically for a tidy navigation menu */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Subtle shadow for depth and visual separation from the content */
+    flex-direction: column; 
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 .sidebar a {
-    padding: 1rem; /* Spacing around icons for touch friendliness and visual appeal */
-    text-decoration: none; /* No underlines on links to keep the icons clean */
-    color: #333; /* Dark grey for contrast against the light background */
-    display: flex; /* Use flexbox for centering to align items perfectly in the center */
-    justify-content: center; /* Center horizontally within the sidebar */
-    align-items: center; /* Center vertically within the sidebar */
+    padding: 1rem; 
+    text-decoration: none; 
+    color: #333;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .sidebar img {
-    max-width: 100%; /* Full width of the container to ensure icons are not oversized */
-    height: auto; /* Maintain aspect ratio of icons for visual consistency */
+    max-width: 100%; 
+    height: auto; 
 }
 
 /* Main content area styles */
 .main {
-    margin-left: 4rem; /* Offset by the sidebar width to prevent overlap */
-    background-color: #fff; /* White background for content to ensure readability */
-    width: calc(100% - 4rem); /* Full width minus sidebar to utilize the remaining space */
-    min-height: 100vh; /* At least full viewport height to fill the screen with content */
+    margin-left: 4rem; 
+    background-color: #fff; 
+    width: calc(100% - 4rem); 
+    min-height: 100vh; 
 }
 
 .section {
-    display: block; /* Default block display for standard flow of content */
-    background-color: #fff; /* Consistent white background for clean design */
-    width: 100%; /* Full width of the container for maximum content space */
-    min-height: 100vh; /* At least full viewport height to maintain full screen sections */
+    display: block; 
+    background-color: #fff; 
+    width: 100%;
+    min-height: 100vh; 
 }
 
 /* Hero section styles */
 .hero {
-	position: relative; /* Establish a stacking context for layered presentation */
+	position: relative; 
 	display: flex;
-	flex-direction: column; /* Stack children vertically for a structured layout */
-	justify-content: center; /* Center children vertically for balanced visual weight */
-	align-items: flex-start; /* Align children to the start (left) for traditional flow */
-	height: 100vh; /* Full viewport height for a bold, screen-filling hero section */
-	padding: 4em; /* Spacious padding for a breathable design */
-	box-sizing: border-box; /* Include padding in width/height calculations for accurate sizing */
-	color: #333; /* Dark grey text for readability against a potentially bright background */
-	overflow: hidden; /* Hide overflow to prevent background image spill outside the hero area */
-    z-index: 0; /* Set base stacking order for hero content */
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: flex-start; 
+	height: 100vh; 
+	padding: 4em; 
+	box-sizing: border-box; 
+	color: #333; 
+	overflow: hidden; 
+    z-index: 0; 
 }
 
 .hero::before {
 	content: "";
-	position: absolute; /* Position absolutely within .hero to overlay the background */
+	position: absolute; 
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	background: url(../assets/img/bg/home.jpg) center center no-repeat;
-	background-size: cover; /* Cover the entire area for a full background image */
-	filter: grayscale(100%); /* Monochrome filter for a classic, timeless look */
-	z-index: -1; /* Behind the content to act as a backdrop */
+	background-size: cover; 
+	filter: grayscale(100%); 
+	z-index: -1; 
 }
 
 .hero-title {
-	max-width: 16em; /* Max width for readability and to prevent overly long lines */
-	margin: 0 0 1em 0; /* Space below the title to separate from subsequent content */
-	font-size: 7rem; /* Large, readable font size for impact */
-	font-weight: bold; /* Bold font weight for emphasis */
-	line-height: 1.2; /* Tight line height for a compact, strong headline */
-	color: white; /* White text for contrast and visibility against the background */
-	z-index: 1; /* Above the background for clear legibility */
+	max-width: 16em; 
+	margin: 0 0 1em 0; 
+	font-size: 7rem; 
+	font-weight: bold; 
+	line-height: 1.2; 
+	color: white; 
+	z-index: 1; 
 }
 
 .hero-button {
-	padding: 1em 2.5em; /* Generous padding for a clickable, touch-friendly button */
-	color: #fff; /* White text for visibility and consistency with the hero title */
-	text-decoration: none; /* No underline to maintain button appearance */
-    background-color: transparent; /* Transparent background for a minimal, modern look */
-	border: 0.2em solid white; /* White border for definition against the background */
-    border-color: #fff; /* Explicitly white border for clarity */
-	border-radius: 0.25rem; /* Slightly rounded corners for a friendly, modern button shape */
-	max-width: 250px; /* Maximum width to maintain button proportion */
-	display: inline-block; /* Allows for width and margin, enabling better control over layout */
-	text-align: center; /* Center text for a balanced button label */
-	margin-left: 1em; /* Space from the title to separate button from headline */
-	cursor: pointer; /* Pointer cursor on hover to indicate interactivity */
+	padding: 1em 2.5em; 
+	color: #fff; 
+	text-decoration: none; 
+    background-color: transparent; 
+	border: 0.2em solid white; 
+    border-color: #fff; 
+	border-radius: 0.25rem; 
+	max-width: 250px; 
+	display: inline-block; 
+	text-align: center; 
+	margin-left: 1em; 
+	cursor: pointer; 
     font-weight: bold;
     font-size: larger;
-	z-index: 1; /* Above the background to ensure the button is clickable */
+	z-index: 1; 
 }
 
 .hero-button:hover {
-	background-color: #fff; /* White background on hover for visual feedback */
-	color: #000; /* Black text on hover for contrast and readability */
-	transition: background-color, color 0.3s; /* Smooth transition for background and text color changes */
+	background-color: #fff; 
+	color: #000; 
+	transition: background-color, color 0.3s;
 }
 
 /* About Section */
 .about-section {
-    position: relative; /* Establish a stacking context for layered presentation */
+    position: relative; 
 	display: flex;
-	flex-direction: column; /* Stack children vertically for a structured layout */
-	justify-content: center; /* Center children vertically for balanced visual weight */
-	align-items: flex-start; /* Align children to the start (left) for traditional flow */
-	height: 100vh; /* Full viewport height for a bold, screen-filling hero section */
-	padding: 4em; /* Spacious padding for a breathable design */
-	box-sizing: border-box; /* Include padding in width/height calculations for accurate sizing */
-	color: #333; /* Dark grey text for readability against a potentially bright background */
-	overflow: hidden; /* Hide overflow to prevent background image spill outside the hero area */
-    z-index: 0; /* Set base stacking order for hero content */
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: flex-start; 
+	height: 100vh; 
+	padding: 4em; 
+	box-sizing: border-box; 
+	color: #333; 
+	overflow: hidden; 
+    z-index: 0; 
 }
 
 .about-section::before {
     content: "";
-	position: absolute; /* Position absolutely within .hero to overlay the background */
+	position: absolute; 
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
     border: 1rem solid white;
 	background: url(../assets/img/bg/about.jpg) center center no-repeat;
-	background-size: cover; /* Cover the entire area for a full background image */
-	filter: grayscale(100%); /* Monochrome filter for a classic, timeless look */
-	z-index: -1; /* Behind the content to act as a backdrop */
+	background-size: cover; 
+	filter: grayscale(100%); 
+	z-index: -1; 
 }
 
 .inner-about-section {
-    width: 55%; /* Adjust width as necessary */
-    /* Removed float:right; no longer needed with flexbox */
+    width: 55%; 
     background-color: #fff;
-    padding: 100px; /* You may need to adjust this if it pushes the content out of center */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    /* Center text elements within the inner-about-section */
+    padding: 100px; 
+    box-sizing: border-box; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,7 +156,7 @@ html, body {
     margin-bottom: 30px;
     font-size: large;
     font-weight: bold;
-    text-align: center; /* Center align the title */
+    text-align: center; 
 }
 
 .about-text {
@@ -171,15 +169,15 @@ html, body {
 
 .about-features {
     display: flex;
-    justify-content: center; /* Center the features */
+    justify-content: center; 
     font-weight: bold;
     font-size: medium;
-    width: 100%; /* Set width to 100% of the parent container */
-    text-align: center; /* Center align the text */
+    width: 100%; 
+    text-align: center; 
 }
 
 .about-features span {
-    margin: 0 10px; /* Add horizontal spacing between features */
+    margin: 0 10px; 
 }
 
 /* Map container styles */
@@ -187,13 +185,13 @@ html, body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%; /* Full width to use all available space */
-    height: 100%; /* Full height to match the content area */
+    width: 100%; 
+    height: 100%; 
     overflow: hidden;
 }
 
 .filter-controls  {
-    background-color: #f8f9fa; /* Light grey to match the sidebar for design consistency */
+    background-color: #f8f9fa; 
     z-index: 1;
 }
 

@@ -97,9 +97,7 @@ function getEventTypeColor(eventType) {
     'People': '#FFFCEB',
     'City Services': '#4D4D4D'
   };
-  // Changed default color to a more visible one
   return eventColors[eventType] || '#AAAAAA';
 }
 
-// Call the function to load and display the noise data
 loadNoiseData();
