@@ -272,7 +272,7 @@
         "time": [
           {
             "startTime": "00:00:00",
-            "endTime": "23:59:00"
+            "endTime": "03:00:00"
           }
         ],
         "decibelLevel": 150,
@@ -280,7 +280,22 @@
           {
             "longitude": "",
             "latitude": "",
-            "name": ""
+            "name": "Ambulance"
+          },
+          {
+            "longitude": "",
+            "latitude": "",
+            "name": "Cops"
+          },
+          {
+            "longitude": "",
+            "latitude": "",
+            "name": "Fire"
+          },
+          {
+            "longitude": -73.98958755344351,
+            "latitude": 40.73596598075197,
+            "name": "Garbage Truck"
           }
         ]
       }

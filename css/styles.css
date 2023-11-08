@@ -206,4 +206,45 @@ html, body {
     width: 300px;
     cursor: grab;
 }
-  
+
+.map-key {
+    position: absolute;
+    top: 4rem; 
+    left: 8rem; 
+    background-color: #f8f9fa;
+    width: 20%; 
+    max-width: 150px; 
+    min-height: 100px; 
+    z-index: 10;
+    padding: 1rem; 
+    border-radius: 0.25rem; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    overflow: auto; 
+}
+
+.map-key h1 {
+    margin: 0;
+    padding: 0.5em;
+    text-align: center  ;
+}
+
+.map-key ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.map-key li {
+    margin-bottom: 0.5rem; 
+    font-size: 0.9rem;
+}
+
+.map-key label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.map-key input[type="checkbox"] {
+    margin-right: 0.5rem;
+}

@@ -31,11 +31,59 @@
     <main class="main" id="main">
         <!-- App -->
         <section class="section" id="app">
-            <div id="map" class="map"></div>
+            <div class="map" id="map"></div>
             <!-- Filter Controls -->
             <div class="slider-container">
                 <input type="range" id="timeSlider" min="0" max="23" step="1" value="12">
-                <label for="timeSlider">Time: <span id="timeSliderValue">12:00</span></label>
+                <label for="timeSlider">Time: <span id="timeSliderValue">12:00:00</span></label>
+            </div>
+            <!-- Map Key -->
+            <div class="map-key" id="map-key">
+                <h1>Map Key</h1>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="construction">
+                            Construction
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="traffic">
+                            Traffic
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="subway">
+                            Subway
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="street vendors">
+                            Street Vendors
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="nightlife">
+                            Nightlife
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="people">
+                            People
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" checked="checked" name="mapKey" value="city services">
+                            City Services
+                        </label>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

@@ -25,6 +25,7 @@ function initializeMap(noiseData) {
   map.on('load', () => {
     addNoiseEventLayers(map, noiseData.noiseEvents);
     setupTimeSlider(map, noiseData.noiseEvents);
+    setupMapKeyCheckboxes(map, noiseData.noiseEvents);
   });
 }
 
@@ -75,7 +76,6 @@ function addEventLayers(map, sourceId, eventTypeColor, eventIndex, locationIndex
         }
       });
 
-      // Store the layer ID using the event ID for later reference
       if (!map._noiseEventLayers[eventIndex]) {
         map._noiseEventLayers[eventIndex] = [];
       }
@@ -88,19 +88,19 @@ function setupTimeSlider(map, noiseEvents) {
   const timeSlider = document.getElementById('timeSlider');
   const timeSliderValue = document.getElementById('timeSliderValue');
   
-  // Update the time display when the page loads
   timeSliderValue.textContent = formatTime(timeSlider.value) + ':00';
 
   timeSlider.addEventListener('input', () => {
     const timeValue = timeSlider.value;
-    timeSliderValue.textContent = formatTime(timeValue) + ':00'; // Update the time display
+    timeSliderValue.textContent = formatTime(timeValue) + ':00';
     updateMapForTime(map, noiseEvents, formatTime(timeValue));
   });
 }
 
 function updateMapForTime(map, noiseEvents, sliderTime) {
+  const selectedEventTypes = getSelectedEventTypes();
   noiseEvents.forEach((event, eventIndex) => {
-    const isVisible = isEventVisible(event, sliderTime);
+    const isVisible = isEventVisible(event, sliderTime) && selectedEventTypes.includes(event.type.toLowerCase());
 
     const layerIds = map._noiseEventLayers[eventIndex];
     if (layerIds) {
@@ -111,6 +111,20 @@ function updateMapForTime(map, noiseEvents, sliderTime) {
   });
 }
 
+function setupMapKeyCheckboxes(map, noiseEvents) {
+  const checkboxes = document.querySelectorAll('input[name="mapKey"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      updateMapForTime(map, noiseEvents, formatTime(document.getElementById('timeSlider').value));
+    });
+  });
+}
+
+function getSelectedEventTypes() {
+  const checkboxes = document.querySelectorAll('input[name="mapKey"]:checked');
+  return Array.from(checkboxes).map(checkbox => checkbox.value);
+}
+
 function isEventVisible(event, sliderTime) {
   return event.time.some(timeSlot =>
     sliderTime >= timeSlot.startTime && sliderTime <= timeSlot.endTime
@@ -118,7 +132,6 @@ function isEventVisible(event, sliderTime) {
 }
 
 function formatTime(time) {
-  // Format the time as HH:MM:SS
   return `${String(time).padStart(2, '0')}:00`;
 }
 
@@ -145,8 +158,7 @@ function getEventTypeColor(eventType) {
     'People': '#FFFCEB',
     'City Services': '#4D4D4D'
   };
-  return eventColors[eventType] || '#AAAAAA'; // Default color for better visibility
+  return eventColors[eventType] || '#AAAAAA';
 }
 
-// Call the function to load and display the noise data
 loadNoiseData();
